@@ -8,29 +8,6 @@
 Python 速查表中文版
 本手册是 Python cheat sheet 的中文翻译版。原作者：Arianne Colton and Sean Chen(data.scientist.info@gmail.com)
 编译：ucasFL
-惯例
-
-获取帮助
-
-模块
-
-数值类类型
-
-数据结构
-
-函数
-
-控制流
-
-面向对象编程
-
-常见字符串操作
-
-异常处理
-
-对列表、字典和元组的深入理解
-
-单元测试
 
 惯例
 Python 对大小写敏感；
@@ -46,7 +23,8 @@ Python 使用空白符（制表符或空格）来缩进代码，而不是使用�
 列出模块内容：dir(module1)
 导入模块：import module
 调用模块中的函数：module1.func1()
-注：import 语句会创建一个新的名字空间，并且在该名字空间内执行 .py 文件中的所有语句。如果你想把模块内容导入到当前名字空间，请使用 from module1 import * 语句。
+注：import 语句会创建一个新的名字空间，并且在该名字空间内执行 .py 文件中的所有语句。如果你想把模块内容导入到当前名字空间，请使用 from module1 
+import * 语句。
 
 数值类类型
 查看变量的数据类型：type(variable)
@@ -191,7 +169,8 @@ dict1.update(dict2)#dict1 的值被 dict2 替换
 以相同的顺序返回键列表和值列表，但顺序不是特定的，又称极大可能非排序。
 有效字典键类型
 键必须是不可变的，比如标量类型(int、float、string)或者元组（元组中的所有对象也必须是不可变的）。
-这儿涉及的技术术语是 hashability。可以用函数 hash()来检查一个对象是否是可哈希的，比如 hash('This is a string') 会返回一个哈希值，而 hash([1,2]) 则会报错（不可哈希）。
+这儿涉及的技术术语是 hashability。可以用函数 hash()来检查一个对象是否是可哈希的，比如 hash('This is a string') 会返回一个哈希值，而 
+hash([1,2]) 则会报错（不可哈希）。
 集合
 一个集合是一些无序且唯一的元素的聚集；
 你可以把它看成只有键的字典；
@@ -379,7 +358,8 @@ for val in collection:
 Python自带unittest模块，可供我们编写单元测试。
 
 import unittest
-我们可以编写继承于unittest.TestCase测试类的子类，并在子类中编写具体的测试函数。测试函数命必须以test_开头，否则不会被识别为测试函数，进而不会在运行单元测试时被运行。
+我们可以编写继承于unittest.TestCase测试类的子类，并在子类中编写具体的测试函数。测试函数命必须以test_开头，否则不会被识别为测试函数，进而
+不会在运行单元测试时被运行。
 
 class TestSubclass(unittest.TestCase):
   def test_func(self):
@@ -397,7 +377,8 @@ class TestSubclass(unittest.TestCase):
   @unittest.skip(reason='just skip')
   def test_skip(self):
     raise Exception('I shall never be tested')
-另外， unittest.TestCase中还有两个特殊的成员函数，他们分别会在调用每一个测试函数的前后运行。在测试前连接数据库并在测试完成后断开连接是一种常见的使用场景。
+另外， unittest.TestCase中还有两个特殊的成员函数，他们分别会在调用每一个测试函数的前后运行。在测试前连接数据库并在测试完成后断开连接是一种
+常见的使用场景。
 
 def setUp(self):
   # To do: connect to the database
